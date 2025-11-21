@@ -37,6 +37,39 @@ app.use(
   })
 );
 
+// Specific route for PDF download to handle spaces in filename (must be before static middleware)
+app.get("/Profile/:filename", (req, res) => {
+  const filename = decodeURIComponent(req.params.filename);
+  
+  // Security: Prevent path traversal attacks
+  if (filename.includes("..") || filename.includes("/") || filename.includes("\\")) {
+    return res.status(400).send("Invalid filename");
+  }
+  
+  const profileDir = path.join(__dirname, "Profile");
+  const filePath = path.join(profileDir, filename);
+  
+  // Security: Verify resolved path is within Profile directory
+  const resolvedPath = path.resolve(filePath);
+  const resolvedProfileDir = path.resolve(profileDir);
+  
+  if (!resolvedPath.startsWith(resolvedProfileDir)) {
+    return res.status(403).send("Access denied");
+  }
+  
+  res.download(filePath, (err) => {
+    if (err) {
+      console.error("Error downloading file:", err);
+      res.status(404).send("File not found");
+    }
+  });
+});
+
+app.use(
+  "/Profile",
+  express.static(path.join(__dirname, "Profile"))
+);
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,

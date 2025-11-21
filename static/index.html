@@ -33,7 +33,6 @@
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#compliance">Compliance</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -52,7 +51,7 @@
           </p>
           <div class="hero-cta">
             <button class="btn btn-primary" onclick="document.querySelector('#contact').scrollIntoView()">Request a Quote</button>
-            <button class="btn btn-outline" onclick="document.querySelector('#projects').scrollIntoView()">View Projects</button>
+            <a href="projects-gallery.html" class="btn btn-outline">View Projects</a>
           </div>
           <div class="metrics">
             <div class="metric-card">
@@ -70,70 +69,68 @@
           </div>
         </div>
       </div>
-      <div class="quick-links">
-        <a href="#contact">Contact Us</a>
-        <a href="#projects">Previous Works</a>
-        <a href="#services">Our Services</a>
-      </div>
+      
     </section>
 
     <section id="about" class="section">
-      <h2 class="section-title">About Optimus</h2>
-      <p class="section-intro">
-        Incorporated under the Companies Act and registered with the National Council for Construction
-        (NCC Grade 5B), Optimus Building & Civil Contractors Ltd combines local ownership with global
-        standards. Clear communication, collaborative planning, and uncompromising safety are the
-        cornerstones of every engagement.
-      </p>
-      <div class="grid about-grid">
-        <article class="card reveal">
-          <h3>Company History</h3>
-          <p>
-            Since 2015 we have grown from a specialist building outfit into a multidisciplinary
-            contractor trusted by government ministries, diplomatic missions, mining houses, and
-            private developers. Our governance framework emphasises financial stewardship, ethical
-            supply chains, and stakeholder transparency.
-          </p>
-        </article>
-        <article class="card reveal delay-1">
-          <h3>Philosophy</h3>
-          <p>
-            Our Philosophy is to provide our clients with an assured             
-            experience when chosen to execute their projects. Our             
-            emphasis on clear communication and follow through              
-            procedures ensures that our clients’ objectives are top priority in 
-            the planning and execution of all our projects.
-          </p>
-        </article>
-        <article class="card reveal delay-2">
-          <h3>Capability Statement</h3>
-          <p>
-            Optimus Building and Civil Contractors limited has an in-house team of skilled human 
-            resource as well as network of trade alliance of professional affiliates to manage projects 
-            of any size within its portfolio.
-          </p>
-        </article>
-      </div>
-      <div class="grid spacing-top">
-        <article class="card reveal">
-          <h3>Vision</h3>
-          <p>To be a leader in the Zambian construction industry delivering quality service.</p>
-        </article>
-        <article class="card reveal delay-1">
-          <h3>Mission</h3>
-          <p>
-            To deliver construction products that are of good quality and within specified time frames.
-          </p>
-        </article>
-        <article class="card reveal delay-2">
-          <h3>QHSE Policy</h3>
-          <p>
-            Optimus implements a comprehensive QHSE system based on ISO 9001, ISO 14001, 
-            and OHSAS 18001, ensuring regulatory compliance, customer satisfaction, employee 
-            safety, continuous improvement, and environmental responsibility through proactive 
-            risk management and sustainable operational practices.
-          </p>
-        </article>
+      <div class="about-section">
+        <h2 class="section-title">About Optimus</h2>
+        <p class="section-intro">
+          Incorporated under the Companies Act and registered with the National Council for Construction
+          (NCC Grade 5B), Optimus Building & Civil Contractors Ltd combines local ownership with global
+          standards. Clear communication, collaborative planning, and uncompromising safety are the
+          cornerstones of every engagement.
+        </p>
+        <div class="grid about-grid">
+          <article class="card reveal">
+            <h3>Company History</h3>
+            <p>
+              Since 2015 we have grown from a specialist building outfit into a multidisciplinary
+              contractor trusted by government ministries, diplomatic missions, mining houses, and
+              private developers. Our governance framework emphasises financial stewardship, ethical
+              supply chains, and stakeholder transparency.
+            </p>
+          </article>
+          <article class="card reveal delay-1">
+            <h3>Philosophy</h3>
+            <p>
+              Our Philosophy is to provide our clients with an assured             
+              experience when chosen to execute their projects. Our             
+              emphasis on clear communication and follow through              
+              procedures ensures that our clients' objectives are top priority in 
+              the planning and execution of all our projects.
+            </p>
+          </article>
+          <article class="card reveal delay-2">
+            <h3>Capability Statement</h3>
+            <p>
+              Optimus Building and Civil Contractors limited has an in-house team of skilled human 
+              resource as well as network of trade alliance of professional affiliates to manage projects 
+              of any size within its portfolio.
+            </p>
+          </article>
+        </div>
+        <div class="grid spacing-top">
+          <article class="card reveal">
+            <h3>Vision</h3>
+            <p>To be a leader in the Zambian construction industry delivering quality service.</p>
+          </article>
+          <article class="card reveal delay-1">
+            <h3>Mission</h3>
+            <p>
+              To deliver construction products that are of good quality and within specified time frames.
+            </p>
+          </article>
+          <article class="card reveal delay-2">
+            <h3>QHSE Policy</h3>
+            <p>
+              Optimus implements a comprehensive QHSE system based on ISO 9001, ISO 14001, 
+              and OHSAS 18001, ensuring regulatory compliance, customer satisfaction, employee 
+              safety, continuous improvement, and environmental responsibility through proactive 
+              risk management and sustainable operational practices.
+            </p>
+          </article>
+        </div>
       </div>
       <h3 class="section-subheading">Executive Leadership</h3>
       <div class="grid executives-grid">
@@ -190,7 +187,7 @@
       
     </section>
 
-    <section id="services" class="section">
+    <section id="services" class="section services-section">
       <h2 class="section-title">Services</h2>
       <p class="section-intro">
         We partner with private developers, corporations, embassies, schools, mines, and public
@@ -203,7 +200,7 @@
         </article>
         <article class="card reveal delay-1">
           <h3>Civil Works</h3>
-          <p>Roads, drainage, earthworks, foundations, bridges, and bulk infrastructure executed with precision.</p>
+          <p>Drainage, earthworks, foundations, and bulk infrastructure executed with precision.</p>
         </article>
         <article class="card reveal delay-2">
           <h3>Renovations & Refurbishments</h3>
@@ -247,129 +244,77 @@
         digesters, renovations, landscaping, school facilities, embassy upgrades, residential
         communities, and corporate campuses. Below is a snapshot of flagship assignments.
       </p>
-      <div class="grid">
-        <article class="card">
-          <h3>Building Construction</h3>
-          <p>Commercial hubs, embassy facilities, residential complexes, and institutional blocks.</p>
-        </article>
-        <article class="card">
-          <h3>Civil Works</h3>
-          <p>Road upgrades, drainage systems, bridge infrastructure, and platform preparation.</p>
-        </article>
-        <article class="card">
-          <h3>Water & Sewer Reticulation</h3>
-          <p>Bulk reticulation networks, pump stations, and wastewater management infrastructure.</p>
-        </article>
-        <article class="card">
-          <h3>Biogas Digesters</h3>
-          <p>Design-build installations delivering sustainable waste-to-energy solutions.</p>
-        </article>
-        <article class="card">
-          <h3>Renovations</h3>
-          <p>Interior enhancements, façade renewals, and heritage conservation works.</p>
-        </article>
-        <article class="card">
-          <h3>Landscaping & External Works</h3>
-          <p>Irrigation, paving, green spaces, and civic realm improvements.</p>
-        </article>
-        <article class="card">
-          <h3>School Projects</h3>
-          <p>Classroom blocks, laboratories, dormitories, and ablution facilities.</p>
-        </article>
-        <article class="card">
-          <h3>Embassy & Diplomatic</h3>
-          <p>Secure compounds, office fit-outs, and protocol-compliant upgrades.</p>
-        </article>
-        <article class="card">
-          <h3>Residential Estates</h3>
-          <p>Luxury homes, gated communities, and turnkey housing packages.</p>
-        </article>
-        <article class="card">
-          <h3>Corporate & Industrial</h3>
-          <p>Headquarters, warehouses, and specialized production facilities.</p>
-        </article>
+      <div class="projects-tags">
+        <span class="project-tag">Building Construction</span>
+        <span class="project-tag">Civil Works</span>
+        <span class="project-tag">Water & Sewer Reticulation</span>
+        <span class="project-tag">Biogas Digesters</span>
+        <span class="project-tag">Renovations</span>
+        <span class="project-tag">Landscaping & External Works</span>
+        <span class="project-tag">School Projects</span>
+        <span class="project-tag">Embassy & Diplomatic</span>
+        <span class="project-tag">Residential Estates</span>
+        <span class="project-tag">Corporate & Industrial</span>
       </div>
       <div class="projects-gallery">
         <figure>
-          <img src="Images/Workers silohuette.jpg" alt="Modern building exterior" />
-          <figcaption>Embassy Annex | Completed</figcaption>
+          <img src="Images/School ablution view.jpg" alt="Modern building exterior" />
+          <figcaption>School ablution construction</figcaption>
         </figure>
         <figure>
-          <img src="https://via.placeholder.com/420x280?text=Civil+Works" alt="Civil works site" />
-          <figcaption>Drainage & Road Upgrade | Lusaka</figcaption>
+          <img src="Images/Tank stand.jpg" alt="Civil works site" />
+          <figcaption>Tank stand fitting</figcaption>
         </figure>
         <figure>
-          <img src="https://via.placeholder.com/420x280?text=Water+Reticulation" alt="Water reticulation pipes" />
+          <img src="Images/Pipe work septic thing.jpg" alt="Water reticulation pipes" />
           <figcaption>Bulk Water & Sewer Reticulation | Copperbelt</figcaption>
         </figure>
         <figure>
-          <img src="https://via.placeholder.com/420x280?text=Renovations" alt="Renovated interior" />
+          <img src="Images/Renovations wide room.png" alt="Renovated interior" />
           <figcaption>Corporate Interior Fit-Out | Lusaka</figcaption>
         </figure>
       </div>
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>Client</th>
-              <th>Description of Works</th>
-              <th>Role</th>
-              <th>Status</th>
-              <th>Value</th>
-              <th>Contact Person</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Confidential Embassy Client</td>
-              <td>Construction of embassy annex, secure perimeter, and firefighting systems</td>
-              <td>Main Contractor</td>
-              <td>Completed</td>
-              <td>USD 1.5M</td>
-              <td>Facilities Director</td>
-            </tr>
-            <tr>
-              <td>Ministry of Education</td>
-              <td>Classroom blocks, ablution facilities, and staff housing units</td>
-              <td>Main Contractor</td>
-              <td>Completed</td>
-              <td>ZMW 8M</td>
-              <td>Provincial Engineer</td>
-            </tr>
-            <tr>
-              <td>Private Developer</td>
-              <td>Luxury residential estate infrastructure and club house</td>
-              <td>Subcontractor</td>
-              <td>Ongoing</td>
-              <td>ZMW 12M</td>
-              <td>Project Architect</td>
-            </tr>
-            <tr>
-              <td>Utility Company</td>
-              <td>Water & sewer reticulation upgrade, pump stations, and reservoirs</td>
-              <td>Main Contractor</td>
-              <td>Completed</td>
-              <td>ZMW 5.4M</td>
-              <td>Project Manager</td>
-            </tr>
-            <tr>
-              <td>International School</td>
-              <td>Biogas digesters, science labs, and sports pavilion renovation</td>
-              <td>Main Contractor</td>
-              <td>Completed</td>
-              <td>ZMW 6.2M</td>
-              <td>School Administrator</td>
-            </tr>
-            <tr>
-              <td>Corporate Campus</td>
-              <td>Head office fit-out, firefighting upgrades, and landscaping</td>
-              <td>Main Contractor</td>
-              <td>Ongoing</td>
-              <td>ZMW 10.5M</td>
-              <td>Facilities Manager</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="see-more-btn">
+        <a href="projects-gallery.html" class="btn btn-primary">See More Images</a>
+      </div>
+      <h3 class="section-subheading">Our Clients</h3>
+      <div class="clients-grid">
+        <div class="client-logo">
+          <img src="Images/AB bank logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/Aflife logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/BORDA logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/Estacon logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/Investrust logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/Jica logo.png" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/LSMFEZ logo.png" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/PEAS logo.png" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/USA embassy logo.png" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/Kwacha logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/BOZ logo.jpg" alt="Client logo" />
+        </div>
+        <div class="client-logo">
+          <img src="Images/Habitat logo.png" alt="Client logo" />
+        </div>
       </div>
     </section>
 
@@ -426,13 +371,15 @@
         <article class="card">
           <h3>Compliance & Certifications</h3>
           <p>
-            Optimus BCC maintains up-to-date statutory registrations and industry certifications, giving
-        clients complete confidence in our legal standing, tax compliance, and professional capacity.
+            Optimus BCC maintains valid statutory registrations and is certified by relevant authorities in the construction and civil engineering sectors. We adhere strictly to local and international standards, ensuring all our operations are fully compliant and up-to-date with current regulations.
           </p>
-          <div class="banking-details">
-            <h4>Why bank information?</h4>
-            <p>For verified payments, tender submissions, and mobilization advances.</p>
+          <div class="cert-details">
+            <h4>Our Commitment</h4>
+            <p>
+              We are dedicated to meeting all legal and professional requirements. Our certifications are available for client verification upon request.
+            </p>
           </div>
+          <a href="/Profile/Optimus%20Company%20Profile%202025.pdf" download class="btn btn-primary download-profile-btn">Download Company Profile</a>
         </article>
       </div>
     </section>
@@ -445,7 +392,7 @@
         </div>
         <div>
           <h4>Quick Links</h4>
-          <p><a href="#services">Our Services</a> | <a href="#projects">Projects</a> | <a href="#contact">Contact</a></p>
+          <p><a href="#services">Our Services</a> | <a href="projects-gallery.html">Projects</a> | <a href="#contact">Contact</a></p>
         </div>
         <div>
           <h4>Contact</h4>
@@ -465,77 +412,11 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2025 Optimus Building & Civil Contractors Ltd. All rights reserved.
+        <p>&copy; 2025 Optimus Building & Civil Contractors Ltd. All rights reserved.</p>
+        <p class="footer-dev">For custom software development: <a href="mailto:mbmwenya@gmail.com">mbmwenya@gmail.com</a></p>
       </div>
     </footer>
 
-    <script>
-      const mobileToggle = document.querySelector(".mobile-toggle");
-      const navList = document.querySelector("nav ul");
-
-      mobileToggle.addEventListener("click", () => {
-        navList.classList.toggle("open");
-      });
-
-      navList.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => navList.classList.remove("open"));
-      });
-
-      const revealElements = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.animationPlayState = "running";
-              entry.target.classList.add("animated");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      revealElements.forEach((el) => observer.observe(el));
-
-      const contactForm = document.getElementById("contact-form");
-      const statusEl = contactForm?.querySelector(".form-status");
-
-      contactForm?.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        if (!statusEl) return;
-
-        statusEl.textContent = "Sending...";
-        statusEl.className = "form-status";
-
-        const formData = {
-          name: contactForm.name.value.trim(),
-          email: contactForm.email.value.trim(),
-          subject: contactForm.subject.value.trim(),
-          message: contactForm.message.value.trim(),
-        };
-
-        try {
-          const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
-
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-
-          contactForm.reset();
-          statusEl.textContent = "Thank you! Your message has been sent.";
-          statusEl.classList.add("success");
-        } catch (error) {
-          console.error("Contact form error:", error);
-          statusEl.textContent =
-            "Sorry, we couldn't send your message. Please try again.";
-          statusEl.classList.add("error");
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
