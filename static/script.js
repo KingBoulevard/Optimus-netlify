@@ -1,12 +1,38 @@
 const mobileToggle = document.querySelector(".mobile-toggle");
 const navList = document.querySelector("nav ul");
+const body = document.body;
+
+// Create backdrop overlay
+const backdrop = document.createElement("div");
+backdrop.className = "nav-backdrop";
+document.body.appendChild(backdrop);
+
+function openMenu() {
+  navList.classList.add("open");
+  backdrop.classList.add("active");
+  body.style.overflow = "hidden"; // Prevent body scroll when menu is open
+}
+
+function closeMenu() {
+  navList.classList.remove("open");
+  backdrop.classList.remove("active");
+  body.style.overflow = ""; // Restore body scroll
+}
 
 mobileToggle.addEventListener("click", () => {
-  navList.classList.toggle("open");
+  if (navList.classList.contains("open")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
 
+// Close menu when clicking backdrop
+backdrop.addEventListener("click", closeMenu);
+
+// Close menu when clicking nav links
 navList.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => navList.classList.remove("open"));
+  link.addEventListener("click", closeMenu);
 });
 
 const revealElements = document.querySelectorAll(".reveal");

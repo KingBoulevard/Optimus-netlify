@@ -78,6 +78,13 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  connectionTimeout: 20000, // 20 seconds for cloud environments
+  greetingTimeout: 20000,
+  socketTimeout: 20000,
+  requireTLS: Number(process.env.SMTP_PORT) === 587, // Require TLS for port 587
+  tls: {
+    rejectUnauthorized: false, // Allow self-signed certificates (common in cloud)
+  },
 });
 
 transporter.verify((error) => {

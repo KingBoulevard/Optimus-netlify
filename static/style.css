@@ -18,6 +18,7 @@
 
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
@@ -26,6 +27,9 @@
         background: var(--grey);
         color: var(--text);
         line-height: 1.7;
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
       }
 
       img {
@@ -361,6 +365,12 @@
         gap: 1.5rem;
       }
 
+      .about-cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+
       .spacing-top {
         margin-top: 2rem;
       }
@@ -442,23 +452,20 @@
 
       .project-tag {
         display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: linear-gradient(135deg, var(--navy), var(--navy-dark));
-        color: var(--white);
-        border-radius: 50px;
+        padding: 0.5rem 1rem;
+        background: rgba(7, 26, 46, 0.08);
+        color: var(--heading);
+        border-radius: 6px;
         font-weight: 500;
-        font-size: 0.95rem;
-        letter-spacing: 0.02em;
-        box-shadow: 0 8px 20px rgba(7, 26, 46, 0.15);
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
+        font-size: 0.9rem;
+        letter-spacing: 0.01em;
+        border: 1px solid rgba(7, 26, 46, 0.15);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
       }
 
       .project-tag:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 28px rgba(7, 26, 46, 0.25);
-        border-color: var(--gold);
-        background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+        background: rgba(7, 26, 46, 0.12);
+        border-color: rgba(7, 26, 46, 0.25);
       }
 
       .clients-grid {
@@ -888,27 +895,67 @@
         font-size: 1.2rem;
       }
 
+      .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+        backdrop-filter: blur(2px);
+      }
+
+      .nav-backdrop.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
       @media (max-width: 900px) {
         nav ul {
           position: fixed;
-          inset: 0 0 0 40%;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 60%;
+          max-width: 300px;
           background: rgba(7, 26, 46, 0.98);
+          backdrop-filter: blur(14px);
           flex-direction: column;
-          padding: 5rem 2rem;
+          padding: 5rem 2rem 2rem;
           transform: translateX(100%);
-          transition: transform 0.35s ease;
+          transition: transform 0.35s ease, visibility 0.35s ease;
+          z-index: 1000;
+          box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+          margin: 0;
+          height: 100vh;
+          overflow-y: auto;
+          visibility: hidden;
+          pointer-events: none;
         }
 
         nav ul.open {
           transform: translateX(0);
+          visibility: visible;
+          pointer-events: auto;
         }
 
         nav ul li {
-          margin-bottom: 1rem;
+          margin-bottom: 0;
+          width: 100%;
+        }
+
+        nav ul a {
+          display: block;
+          padding: 0.75rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          width: 100%;
         }
 
         .mobile-toggle {
           display: block;
+          z-index: 1001;
+          position: relative;
         }
 
         .projects-tags {
@@ -939,10 +986,127 @@
 
         .about-section {
           background-attachment: scroll;
+          background-size: 120% auto;
+          background-position: center center;
         }
 
         .about-section .card {
           background: rgba(250, 240, 200, 0.96);
+        }
+
+        /* Horizontal scrolling for services on mobile */
+        .services-grid {
+          display: flex;
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+          gap: 1.5rem;
+          padding-bottom: 1rem;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x proximity;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(7, 26, 46, 0.3) transparent;
+        }
+
+        .services-grid::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .services-grid::-webkit-scrollbar-track {
+          background: rgba(7, 26, 46, 0.05);
+          border-radius: 10px;
+        }
+
+        .services-grid::-webkit-scrollbar-thumb {
+          background: rgba(7, 26, 46, 0.3);
+          border-radius: 10px;
+        }
+
+        .services-grid .card {
+          flex: 0 0 85%;
+          max-width: 85%;
+          min-width: 280px;
+          scroll-snap-align: start;
+        }
+
+        /* Combined horizontal scrolling for all about section cards */
+        .about-section .about-cards-container {
+          display: flex;
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+          gap: 1.5rem;
+          padding-bottom: 1rem;
+          margin-top: 2rem;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x proximity;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(7, 26, 46, 0.3) transparent;
+        }
+
+        .about-section .about-cards-container::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .about-section .about-cards-container::-webkit-scrollbar-track {
+          background: rgba(7, 26, 46, 0.05);
+          border-radius: 10px;
+        }
+
+        .about-section .about-cards-container::-webkit-scrollbar-thumb {
+          background: rgba(7, 26, 46, 0.3);
+          border-radius: 10px;
+        }
+
+        .about-section .about-cards-container .card {
+          flex: 0 0 85%;
+          max-width: 85%;
+          min-width: 280px;
+          scroll-snap-align: start;
+        }
+
+        /* Horizontal scrolling for projects gallery on mobile */
+        .projects-gallery {
+          display: flex;
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+          gap: 1rem;
+          padding-bottom: 1rem;
+          margin-top: 2rem;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x proximity;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(7, 26, 46, 0.3) transparent;
+        }
+
+        .projects-gallery::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .projects-gallery::-webkit-scrollbar-track {
+          background: rgba(7, 26, 46, 0.05);
+          border-radius: 10px;
+        }
+
+        .projects-gallery::-webkit-scrollbar-thumb {
+          background: rgba(7, 26, 46, 0.3);
+          border-radius: 10px;
+        }
+
+        .projects-gallery figure {
+          flex: 0 0 85%;
+          max-width: 85%;
+          min-width: 280px;
+          scroll-snap-align: start;
+          aspect-ratio: 4/3;
+          overflow: hidden;
+        }
+
+        .projects-gallery img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .gallery-grid {
