@@ -1,0 +1,35 @@
+# Netlify configuration file
+# This file configures how Netlify builds and deploys your site
+
+[build]
+  # Publish directory: where your static HTML files are located
+  # Images and Profile folders should be inside the static/ directory
+  publish = "static"
+  
+  # Functions directory: where your serverless functions are located
+  functions = "netlify/functions"
+  
+  # Build command: Copy Images and Profile folders into static/
+  # (This ensures the folder structure works for both GitHub and Netlify)
+  command = "npm run build"
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/Images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/Profile/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Disposition = "attachment"
+
