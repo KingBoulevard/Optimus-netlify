@@ -1,11 +1,49 @@
 const mobileToggle = document.querySelector(".mobile-toggle");
 const navList = document.querySelector("nav ul");
 const body = document.body;
+const header = document.querySelector("header");
 
 // Create backdrop overlay
 const backdrop = document.createElement("div");
 backdrop.className = "nav-backdrop";
 document.body.appendChild(backdrop);
+
+// Header scroll behavior: hide on scroll down, show on scroll up
+let lastScrollY = window.scrollY;
+let scrollThreshold = 100; // Minimum scroll distance before hiding header
+
+function handleScroll() {
+  const currentScrollY = window.scrollY;
+  
+  // Only hide/show if scrolled past threshold
+  if (currentScrollY < scrollThreshold) {
+    header.classList.remove("header-hidden");
+    return;
+  }
+  
+  // Scrolling down - hide header
+  if (currentScrollY > lastScrollY) {
+    header.classList.add("header-hidden");
+  } 
+  // Scrolling up - show header
+  else if (currentScrollY < lastScrollY) {
+    header.classList.remove("header-hidden");
+  }
+  
+  lastScrollY = currentScrollY;
+}
+
+// Throttle scroll events for better performance
+let ticking = false;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      handleScroll();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
 
 function openMenu() {
   navList.classList.add("open");
@@ -87,6 +125,63 @@ fadeInElements.forEach((el) => {
 
 const contactForm = document.getElementById("contact-form");
 const statusEl = contactForm?.querySelector(".form-status");
+
+// Services counter for mobile horizontal scroll
+const servicesGrid = document.querySelector(".services-grid");
+const servicesCounter = document.querySelector(".services-counter");
+
+if (servicesGrid && servicesCounter) {
+  const serviceCards = servicesGrid.querySelectorAll(".card");
+  const totalServices = serviceCards.length;
+
+  function updateServicesCounter() {
+    // Only update on mobile (when services-grid is in flex mode)
+    if (window.innerWidth <= 900 && totalServices > 0) {
+      const gridRect = servicesGrid.getBoundingClientRect();
+      const gridCenter = gridRect.left + gridRect.width / 2;
+      
+      let closestCard = null;
+      let closestDistance = Infinity;
+      
+      serviceCards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(cardCenter - gridCenter);
+        
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestCard = index + 1;
+        }
+      });
+      
+      if (closestCard) {
+        servicesCounter.textContent = `${closestCard}/${totalServices}`;
+      }
+    }
+  }
+
+  // Update counter on scroll
+  let scrollTimeout;
+  servicesGrid.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateServicesCounter, 50);
+  });
+
+  // Update counter on resize
+  window.addEventListener("resize", () => {
+    updateServicesCounter();
+  });
+
+  // Initial update
+  updateServicesCounter();
+  
+  // Update when cards become visible
+  const servicesObserver = new IntersectionObserver(() => {
+    updateServicesCounter();
+  }, { root: servicesGrid, threshold: 0.5 });
+  
+  serviceCards.forEach(card => servicesObserver.observe(card));
+}
 
 contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
