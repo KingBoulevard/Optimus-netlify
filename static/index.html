@@ -17,14 +17,18 @@
       href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="nav-container">
         <div class="logo">
-          <img src="Images/logo.jpg" alt="Optimus Building & Civil Contractors logo" />
-          <span>Optimus BCC Ltd</span>
+          <img src="Images/logo_test_1-removebg-preview.png" alt="Optimus Building & Civil Contractors logo" />
+          
         </div>
         <button class="mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
         <nav>
@@ -43,8 +47,8 @@
     <section id="home" class="hero">
       <div class="hero-content">
         <div class="hero-copy">
-          <p>Optimus Building & Civil Contractors Ltd</p>
-          <h1>Your Project, Our “Prime” Concern!</h1>
+          <h1 class="hero-brand">Optimus Building & Civil Contractors Ltd</h1>
+          <h2 class="hero-title">Your Project, Our “Prime” Concern!</h2>
           <p>
             A wholly Zambian-owned contractor established in 2015, delivering time-conscious,
             cost-effective, and quality-assured infrastructure for public institutions, corporates,
@@ -155,42 +159,52 @@
         </article>
       </div>
       <h3 class="section-subheading section-subheading--wide">Executive Leadership</h3>
-      <div class="grid executives-grid">
-        <article class="card reveal delay-1">
-          <img src="Images/Mununga.jpg" alt="Portrait of Mr. Mununga Mungalu" />
-          <h3>Mr. Mununga Mungalu</h3>
-          <p class="title">Director Administration</p>
-          <p>
-            MSc, Urban Water and Sanitation (IHE Delft, Netherlands);<br>
-            BSc, Civil Engineering (Copperbelt University, Zambia);<br>
-            Member, Engineering Institute of Zambia & ERB.
-          </p>
-        </article>
-        <article class="card reveal">
-          <img src="Images/Sandra.jpg" alt="Portrait of Mrs. Sandra K. Mungalu" />
-          <h3>Mrs. Sandra K. Mungalu</h3>
-          <p class="title">Director Operations</p>
-          <p>
-            MSc, Project Management (University of Lusaka);<br>
-            BSc, Quantity Surveying (Copperbelt University);<br>
-            Member, SIZ & ZIQS.
-          </p>
-        </article>
-        <article class="card reveal delay-2">
-          <img src="Images/Ariel.jpg" alt="Portrait of Mr. Ariel Kasambala" />
-          <h3>Mr. Ariel Kasambala</h3>
-          <p class="title">Projects Manager</p>
-          <p>
-            BSc, Quantity Surveying (Copperbelt University);<br>
-            Member, ZIQS.
-          </p>
-        </article>
-        <article class="card reveal delay-3">
-          <img src="Images/Chali.jpg" alt="Portrait of Ms Chali Chanda" />
-          <h3>Ms Chali Chanda</h3>
-          <p class="title">Administrative Assistant</p>
-          <p>Bachelor of Arts in Development Studies (University of Zambia)</p>
-        </article>
+      <div class="executives-slider">
+        <button class="executives-scroll-btn exec-prev" aria-label="Scroll left">&larr;</button>
+        <div class="grid executives-grid">
+          <article class="card reveal delay-1">
+            <img src="Images/Mununga.jpg" alt="Portrait of Mr. Mununga Mungalu" />
+            <h3>Mr. Mununga Mungalu</h3>
+            <p class="title">Director Administration</p>
+            <p>
+              MSc, Urban Water and Sanitation (IHE Delft, Netherlands);<br>
+              BSc, Civil Engineering (Copperbelt University, Zambia);<br>
+              Member, Engineering Institute of Zambia & ERB.
+            </p>
+          </article>
+          <article class="card reveal">
+            <img src="Images/Sandra.jpg" alt="Portrait of Mrs. Sandra K. Mungalu" />
+            <h3>Ms. Sandra Kyprios</h3>
+            <p class="title">Director Operations</p>
+            <p>
+              MSc, Project Management (University of Lusaka);<br>
+              BSc, Quantity Surveying (Copperbelt University);<br>
+              Member, SIZ & ZIQS.
+            </p>
+          </article>
+          <article class="card reveal delay-2">
+            <img src="Images/Ariel.jpg" alt="Portrait of Mr. Ariel Kasambala" />
+            <h3>Mr. Ariel Kasambala</h3>
+            <p class="title">Projects Manager</p>
+            <p>
+              BSc, Quantity Surveying (Copperbelt University);<br>
+              Member, ZIQS.
+            </p>
+          </article>
+          <article class="card reveal delay-3">
+            <img src="Images/Chali.jpg" alt="Portrait of Ms Chali Chanda" />
+            <h3>Ms Chali Chanda</h3>
+            <p class="title">Administrative Assistant</p>
+            <p>Bachelor of Arts in Development Studies (University of Lusaka)</p>
+          </article>
+          <!---<article class="card reveal delay-3">
+            <img src="Images/" alt="Portrait of Mr Danny Kyprios" />
+            <h3>Mr Danny Kyprios</h3>
+            <p class="title">Title</p>
+            <p>Qualifications</p>
+          </article> -->
+        </div>
+        <button class="executives-scroll-btn exec-next" aria-label="Scroll right">&rarr;</button>
       </div>
     </section>
 
@@ -232,7 +246,7 @@
         </figure>
       </div>
       <div class="see-more-btn">
-        <a href="projects-gallery.html" class="btn btn-primary">See More Images</a>
+        <a href="projects-gallery.html" class="btn btn-primary">See More</a>
       </div>
       <h3 class="section-subheading">Our Clients</h3>
       <div class="clients-grid">
@@ -296,7 +310,7 @@
           <div class="map-container">
             <iframe
               title="Optimus Building & Civil Contractors Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.445233750697!2d28.354509503395764!3d-15.449946435978434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408da5858029ab%3A0x49e386bd0c8a126f!2sOptimus%20Building%20and%20Civil%20Contractors%20Ltd!5e1!3m2!1sen!2szm!4v1763631694573!5m2!1sen!2szm"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.0473082946905!2d28.357075499999997!3d-15.449901799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408d2dbc84ffa5%3A0x37d815daee4a8c3d!2sOptimus%20Building%20and%20Civil%20Contractors%20Ltd!5e1!3m2!1sen!2szm!4v1766925733946!5m2!1sen!2szm"
               width="400"
               height="300"
               style="border:0;"
@@ -306,7 +320,7 @@
             ></iframe>
             <a
               class="map-link"
-              href="https://maps.app.goo.gl/zSAusw9X9GYUGv329"
+              href="https://maps.app.goo.gl/kev67BLPYdTtEgANA"
               target="_blank"
               rel="noopener"
             >

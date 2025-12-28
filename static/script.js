@@ -2,6 +2,7 @@ const mobileToggle = document.querySelector(".mobile-toggle");
 const navList = document.querySelector("nav ul");
 const body = document.body;
 const header = document.querySelector("header");
+const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
 
 // Create backdrop overlay
 const backdrop = document.createElement("div");
@@ -33,12 +34,46 @@ function handleScroll() {
   lastScrollY = currentScrollY;
 }
 
+const navSections = navLinks
+  .map((link) => {
+    const targetId = link.getAttribute("href")?.replace("#", "");
+    return targetId ? document.getElementById(targetId) : null;
+  })
+  .filter(Boolean);
+
+function setActiveNav(sectionId) {
+  navLinks.forEach((link) => {
+    const targetId = link.getAttribute("href")?.replace("#", "");
+    if (targetId === sectionId) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+
+function handleScrollSpy() {
+  if (!navSections.length) return;
+  const offset = (header?.offsetHeight || 0) + 6;
+  const scrollPos = window.scrollY + offset;
+  let currentId = navSections[0]?.id || null;
+
+  navSections.forEach((section) => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      currentId = section.id;
+    }
+  });
+
+  setActiveNav(currentId);
+}
+
 // Throttle scroll events for better performance
 let ticking = false;
 window.addEventListener("scroll", () => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       handleScroll();
+      handleScrollSpy();
       ticking = false;
     });
     ticking = true;
@@ -71,6 +106,12 @@ backdrop.addEventListener("click", closeMenu);
 // Close menu when clicking nav links
 navList.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeMenu);
+  link.addEventListener("click", () => {
+    const targetId = link.getAttribute("href")?.replace("#", "");
+    if (targetId) {
+      setActiveNav(targetId);
+    }
+  });
 });
 
 const revealElements = document.querySelectorAll(".reveal");
@@ -91,7 +132,7 @@ revealElements.forEach((el) => observer.observe(el));
 
 // Add fade-in effect to section titles and intros
 const fadeInElements = document.querySelectorAll(
-  ".section-title, .section-intro, .section-subheading, .projects-tags, .projects-gallery, .clients-grid, .contact-section, .hero-content, .quick-links, .gallery-item"
+  ".section-title, .section-intro, .section-subheading, .projects-tags, .projects-gallery, .clients-grid, .contact-section, .hero-content, .quick-links"
 );
 
 const fadeInObserver = new IntersectionObserver(
@@ -123,12 +164,28 @@ fadeInElements.forEach((el) => {
   }
 });
 
+function registerFadeIn(element) {
+  element.classList.add("fade-in");
+  fadeInObserver.observe(element);
+}
+
+handleScrollSpy();
+window.addEventListener("resize", handleScrollSpy);
+
 const contactForm = document.getElementById("contact-form");
 const statusEl = contactForm?.querySelector(".form-status");
+const projectsGrid = document.getElementById("projects-grid");
+const projectFilterButtons = document.querySelectorAll(".project-filter");
+const projectFilterMenu = document.querySelector(".project-filter-menu");
+const projectFilterToggle = document.querySelector(".project-filter-toggle");
+const projectFilterLabel = document.querySelector(".project-filter-label");
 
 // Services counter for mobile horizontal scroll
 const servicesGrid = document.querySelector(".services-grid");
 const servicesCounter = document.querySelector(".services-counter");
+const executivesGrid = document.querySelector(".executives-grid");
+const execPrevBtn = document.querySelector(".executives-scroll-btn.exec-prev");
+const execNextBtn = document.querySelector(".executives-scroll-btn.exec-next");
 
 if (servicesGrid && servicesCounter) {
   const serviceCards = servicesGrid.querySelectorAll(".card");
@@ -181,6 +238,141 @@ if (servicesGrid && servicesCounter) {
   }, { root: servicesGrid, threshold: 0.5 });
   
   serviceCards.forEach(card => servicesObserver.observe(card));
+}
+
+if (executivesGrid && execPrevBtn && execNextBtn) {
+  const getExecutiveStep = () => {
+    const card = executivesGrid.querySelector(".card");
+    const styles = window.getComputedStyle(executivesGrid);
+    const gapValue = parseInt(styles.columnGap || styles.gap || "0", 10);
+    return (card?.offsetWidth || 280) + gapValue;
+  };
+
+  const scrollExecutives = (direction) => {
+    executivesGrid.scrollBy({
+      left: direction * getExecutiveStep(),
+      behavior: "smooth",
+    });
+  };
+
+  execPrevBtn.addEventListener("click", () => scrollExecutives(-1));
+  execNextBtn.addEventListener("click", () => scrollExecutives(1));
+
+  function updateExecutiveButtons() {
+    const isLaptop = window.innerWidth > 900 && window.innerWidth <= 1400;
+    const maxScrollLeft = executivesGrid.scrollWidth - executivesGrid.clientWidth;
+    const atStart = executivesGrid.scrollLeft <= 5;
+    const atEnd = executivesGrid.scrollLeft >= maxScrollLeft - 5;
+
+    execPrevBtn.style.display = isLaptop ? "flex" : "none";
+    execNextBtn.style.display = isLaptop ? "flex" : "none";
+    execPrevBtn.disabled = !isLaptop || atStart;
+    execNextBtn.disabled = !isLaptop || atEnd;
+  }
+
+  executivesGrid.addEventListener("scroll", updateExecutiveButtons);
+  window.addEventListener("resize", updateExecutiveButtons);
+  updateExecutiveButtons();
+}
+
+if (projectsGrid) {
+  const projectsData = [
+    // WASH projects
+    { src: "Images/School ablution view.jpg", alt: "School ablution construction", caption: "School Ablution Construction", categories: ["wash"] },
+    { src: "Images/School smaller ab.jpg", alt: "School ablution facility", caption: "School Ablution Facility", categories: ["wash"] },
+    { src: "Images/Other school ab door side view.jpg", alt: "School ablution door side view", caption: "School Ablution - Door Side View", categories: ["wash"] },
+    { src: "Images/Other school ab office.jpg", alt: "School ablution office", caption: "School Ablution Office", categories: ["wash"] },
+    { src: "Images/Other school inside ab.jpg", alt: "School ablution interior", caption: "School Ablution Interior", categories: ["wash"] },
+    { src: "Images/Tank stand.jpg", alt: "Tank stand fitting", caption: "Tank Stand Installation", categories: ["wash"] },
+    { src: "Images/Tank stand room.jpg", alt: "Tank stand room", caption: "Tank Stand Room", categories: ["wash"] },
+    { src: "Images/Regular tank stand.jpg", alt: "Regular tank stand", caption: "Regular Tank Stand", categories: ["wash"] },
+    { src: "Images/Regular tank stand with tanks.png", alt: "Tank stand with tanks", caption: "Tank Stand with Tanks", categories: ["wash"] },
+    { src: "Images/Pipe work septic thing.jpg", alt: "Water reticulation pipes", caption: "Water & Sewer Reticulation", categories: ["wash"] },
+    { src: "Images/Pipework digging.jpg", alt: "Pipework excavation", caption: "Pipework Excavation", categories: ["wash"] },
+    // School projects
+    { src: "Images/School construction side view.jpg", alt: "School construction side view", caption: "School Construction - Side View", categories: ["school"] },
+    { src: "Images/Yellow school front.png", alt: "Yellow school building front", caption: "School Building - Front View", categories: ["school"] },
+    { src: "Images/Yellow school inside.png", alt: "Yellow school interior", caption: "School Building - Interior", categories: ["school"] },
+    // Biogas
+    { src: "Images/Biodigester.jpg", alt: "Biodigester installation", caption: "Biodigester Installation", categories: ["biogas"] },
+    // Renovations / Commercial
+    { src: "Images/Renovations wide room.png", alt: "Renovated interior", caption: "Corporate Interior Fit-Out", categories: ["renovations", "commercial"] },
+    { src: "Images/Renovations stairs.png", alt: "Renovated stairs", caption: "Interior Renovation - Stairs", categories: ["renovations", "commercial"] },
+    // Residential
+    { src: "Images/Unfinished house fence.jpg", alt: "House construction fence", caption: "Residential Construction - Fence", categories: ["residential"] },
+    { src: "Images/Unfinished house garage side.jpg", alt: "House garage construction", caption: "Residential Construction - Garage", categories: ["residential"] },
+    { src: "Images/Unfinished house tank side.jpg", alt: "House tank installation", caption: "Residential Construction - Tank Side", categories: ["residential"] },
+  ];
+
+  function renderProjects(filter = "all") {
+    projectsGrid.innerHTML = "";
+
+    const fragment = document.createDocumentFragment();
+    projectsData
+      .filter((item) => filter === "all" || item.categories.includes(filter))
+      .forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "gallery-item";
+
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.alt;
+
+        const overlay = document.createElement("div");
+        overlay.className = "gallery-overlay";
+
+        const caption = document.createElement("p");
+        caption.className = "gallery-caption";
+        caption.textContent = item.caption;
+
+        overlay.appendChild(caption);
+        card.appendChild(img);
+        card.appendChild(overlay);
+
+        fragment.appendChild(card);
+      });
+
+    projectsGrid.appendChild(fragment);
+  }
+
+  projectFilterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      projectFilterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const selected = btn.getAttribute("data-filter") || "all";
+      if (projectFilterLabel) {
+        projectFilterLabel.textContent = btn.textContent.trim();
+      }
+      renderProjects(selected);
+      projectFilterMenu?.classList.remove("open");
+      if (projectFilterToggle) {
+        projectFilterToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  if (projectFilterToggle && projectFilterMenu) {
+    projectFilterToggle.addEventListener("click", () => {
+      const isOpen = projectFilterMenu.classList.toggle("open");
+      projectFilterToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!projectFilterMenu.contains(e.target) && !projectFilterToggle.contains(e.target)) {
+        projectFilterMenu.classList.remove("open");
+        projectFilterToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        projectFilterMenu.classList.remove("open");
+        projectFilterToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  renderProjects("all");
 }
 
 contactForm?.addEventListener("submit", async (event) => {
