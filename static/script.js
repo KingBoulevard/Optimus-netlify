@@ -278,6 +278,13 @@ if (executivesGrid && execPrevBtn && execNextBtn) {
 if (projectsGrid) {
   const projectsData = [
     // WASH projects
+    {
+      src: "Images/Lilayi sports junction.mp4",
+      alt: "Commercial project walkthrough",
+      caption: "Commercial Project Walkthrough",
+      categories: ["commercial"],
+      type: "video"
+    },
     { src: "Images/School ablution view.jpg", alt: "School ablution construction", caption: "School Ablution Construction", categories: ["wash"] },
     { src: "Images/School smaller ab.jpg", alt: "School ablution facility", caption: "School Ablution Facility", categories: ["wash"] },
     { src: "Images/Other school ab door side view.jpg", alt: "School ablution door side view", caption: "School Ablution - Door Side View", categories: ["wash"] },
@@ -296,8 +303,10 @@ if (projectsGrid) {
     // Biogas
     { src: "Images/Biodigester.jpg", alt: "Biodigester installation", caption: "Biodigester Installation", categories: ["biogas"] },
     // Renovations / Commercial
+    
     { src: "Images/Renovations wide room.png", alt: "Renovated interior", caption: "Corporate Interior Fit-Out", categories: ["renovations", "commercial"] },
     { src: "Images/Renovations stairs.png", alt: "Renovated stairs", caption: "Interior Renovation - Stairs", categories: ["renovations", "commercial"] },
+    
     // Residential
     { src: "Images/Unfinished house fence.jpg", alt: "House construction fence", caption: "Residential Construction - Fence", categories: ["residential"] },
     { src: "Images/Unfinished house garage side.jpg", alt: "House garage construction", caption: "Residential Construction - Garage", categories: ["residential"] },
@@ -314,9 +323,26 @@ if (projectsGrid) {
         const card = document.createElement("div");
         card.className = "gallery-item";
 
-        const img = document.createElement("img");
-        img.src = item.src;
-        img.alt = item.alt;
+        let media;
+
+        if (item.type === "video") {
+          media = document.createElement("video");
+          media.src = item.src;
+        
+          media.autoplay = true;
+          media.loop = true;
+        
+          media.muted = true;
+          media.playsInline = true;
+        }
+         else {
+      media = document.createElement("img");
+      media.src = item.src;
+      media.alt = item.alt;
+    }
+
+media.style.width = "100%";
+
 
         const overlay = document.createElement("div");
         overlay.className = "gallery-overlay";
@@ -326,7 +352,7 @@ if (projectsGrid) {
         caption.textContent = item.caption;
 
         overlay.appendChild(caption);
-        card.appendChild(img);
+        card.appendChild(media);
         card.appendChild(overlay);
 
         fragment.appendChild(card);
