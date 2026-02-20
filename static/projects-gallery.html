@@ -1,105 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="View our extensive portfolio of construction projects and previous works across Zambia."
-    />
-    <title>Projects Gallery - Optimus Building & Civil Contractors Ltd</title>
-    <link rel="icon" href="Images/logo new.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="nav-container">
-        <div class="logo">
-          <img src="Images/logo_test_1-removebg-preview.png" alt="Optimus Building & Civil Contractors logo" />
-          <span>Optimus BCC Ltd</span>
-        </div>
-        <button class="mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
-        <nav>
-          <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#staff">Staff Establishment</a></li>
-            <li><a href="projects-gallery.html">Projects</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
 
-    <section class="section projects-gallery-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="View our extensive portfolio of construction projects and previous works across Zambia." />
+  <title>Projects Gallery - Optimus Building & Civil Contractors Ltd</title>
+  <link rel="icon" href="Images/logo new.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Images/logo_test_1-removebg-preview.png" alt="Optimus Building & Civil Contractors logo" />
+
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#staff">Staff Establishment</a></li>
+          <li><a href="projects-gallery.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section projects-gallery-page">
+    <!-- Landing View -->
+    <div id="projects-landing" class="projects-landing">
       <div class="gallery-header">
-        <a href="index.html" class="back-home-btn">← Back to Home</a>
-        <h1 class="section-title">Projects & Previous Works</h1>
+        <a href="index.html" class="back-arrow">‹</a>
+        <h1 class="section-title">Our Projects</h1>
         <p class="section-intro">
-          Explore our comprehensive portfolio showcasing excellence in construction, civil works, and infrastructure development across Zambia.
+          Select a category to view our extensive portfolio of construction and infrastructure works.
         </p>
       </div>
 
-      <div class="gallery-container">
-        <div class="projects-filter-wrap">
-          <button class="project-filter-toggle" aria-haspopup="true" aria-expanded="false">
-            <span class="filter-by-text">Filter by:</span>
-            <span class="project-filter-label">All</span>
-            <span class="filter-arrow">▾</span>
-          </button>
-          <div class="project-filter-menu" role="menu">
-            <button class="project-filter active" data-filter="all" role="menuitem">All</button>
-            <button class="project-filter" data-filter="residential" role="menuitem">Residential</button>
-            <button class="project-filter" data-filter="commercial" role="menuitem">Commercial</button>
-            <button class="project-filter" data-filter="wash" role="menuitem">WASH Projects</button>
-            <button class="project-filter" data-filter="renovations" role="menuitem">Renovations</button>
-            <button class="project-filter" data-filter="school" role="menuitem">School Projects</button>
-            <button class="project-filter" data-filter="biogas" role="menuitem">Biogas Digesters</button>
+      <div class="project-categories-grid">
+        <div class="category-card" data-category="school-infrastructure" role="button" tabindex="0">
+          <div class="category-bg" style="background-image: url('Images/Yellow school front.png')"></div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <h3 class="category-title">School Infrastructure</h3>
           </div>
         </div>
-        <div class="gallery-grid" id="projects-grid"></div>
-      </div>
-    </section>
 
-    <footer>
-      <div class="footer-grid">
-        <div>
-          <h4>Optimus BCC Ltd</h4>
-          <p>Delivering construction and civil engineering excellence across Zambia since 2015.</p>
+        <div class="category-card" data-category="wash-projects" role="button" tabindex="0">
+          <div class="category-bg" style="background-image: url('Images/School ablution view.jpg')"></div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <h3 class="category-title">WASH Projects</h3>
+          </div>
         </div>
-        <div>
-          <h4>Quick Links</h4>
-          <p><a href="index.html#services">Our Services</a> | <a href="projects-gallery.html">Projects</a> | <a href="index.html#contact">Contact</a></p>
+
+        <div class="category-card" data-category="residential" role="button" tabindex="0">
+          <div class="category-bg" style="background-image: url('Images/Unfinished house fence.jpg')"></div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <h3 class="category-title">Residential</h3>
+          </div>
         </div>
-        <div>
-          <h4>Contact</h4>
-          <p>
-            +260 979 486 738<br />
-            +260 979 475 644<br />
-            optimusbcc@gmail.com
-          </p>
+
+        <div class="category-card" data-category="renovations" role="button" tabindex="0">
+          <div class="category-bg" style="background-image: url('Images/Renovations wide room.png')"></div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <h3 class="category-title">Renovations</h3>
+          </div>
         </div>
-        <div>
-          <h4>Social</h4>
-          <div class="socials">
-            <a href="#">LinkedIn</a>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
+
+        <div class="category-card" data-category="bio-gas-digestor" role="button" tabindex="0">
+          <div class="category-bg" style="background-image: url('Images/Biodigester.jpg')"></div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <h3 class="category-title">Bio Gas Digestor</h3>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Optimus Building & Civil Contractors Ltd. All rights reserved.</p>
-        <p class="footer-dev">Custom software development: <a href="mailto:mbmwenya@gmail.com">mbmwenya@gmail.com</a></p>
-      </div>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Gallery View (Hidden initially) -->
+    <div id="gallery-view" class="gallery-view hidden">
+      <div class="gallery-header-inline">
+        <button id="back-to-categories" class="back-btn">← Back to Project Types</button>
+        <h1 id="gallery-title" class="section-title gallery-title">Category Name</h1>
+      </div>
+      <div id="projects-grid"></div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+      <div class="lightbox-content">
+        <img src="" alt="" class="lightbox-image">
+        <video class="lightbox-video" controls playsinline style="display: none;"></video>
+        <p class="lightbox-caption"></p>
+      </div>
+      <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Optimus BCC Ltd</h4>
+        <p>Delivering construction and civil engineering excellence across Zambia since 2015.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html#services">Our Services</a> | <a href="projects-gallery.html">Projects</a> | <a
+            href="index.html#contact">Contact</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          +260 979 486 738<br />
+          +260 979 475 644<br />
+          optimusbcc@gmail.com
+        </p>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <div class="socials">
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Optimus Building & Civil Contractors Ltd. All rights reserved.</p>
+      <p class="footer-dev">Custom software development: <a href="mailto:mbmwenya@gmail.com">mbmwenya@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
-
