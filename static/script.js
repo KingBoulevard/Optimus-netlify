@@ -362,6 +362,56 @@ if (projectsGrid) {
       client: "PEAS Zambia Ltd"
     },
 
+    // WASH – Kampinda Secondary School ablutions (PEAS)
+    {
+      src: "Images/kamp ablution 2.jpg",
+      alt: "Ablution block at Kampinda Secondary School",
+      caption: "Ablution block – Kampinda Secondary School, Kasama",
+      categories: ["wash-projects"],
+      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
+      client: "PEAS Zambia Ltd"
+    },
+    {
+      src: "Images/kampinda ablution 1.jpg",
+      alt: "Kampinda Secondary School ablution facility",
+      caption: "Staff and learners’ ablution – Kampinda Secondary School, Kasama",
+      categories: ["wash-projects"],
+      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
+      client: "PEAS Zambia Ltd"
+    },
+    {
+      src: "Images/kamp ab 3.jpg",
+      alt: "Kampinda Secondary School ablution under construction",
+      caption: "Construction works – Kampinda Secondary School ablution",
+      categories: ["wash-projects"],
+      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
+      client: "PEAS Zambia Ltd"
+    },
+    {
+      src: "Images/kamp ab 4.jpg",
+      alt: "Side elevation of Kampinda Secondary School ablution",
+      caption: "Side elevation – Kampinda Secondary School ablution",
+      categories: ["wash-projects"],
+      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
+      client: "PEAS Zambia Ltd"
+    },
+    {
+      src: "Images/kamp ab 5.jpg",
+      alt: "Completed ablution block at Kampinda Secondary School",
+      caption: "Completed ablution block – Kampinda Secondary School, Kasama",
+      categories: ["wash-projects"],
+      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
+      client: "PEAS Zambia Ltd"
+    },
+    {
+      src: "Images/kamp ab again.jpg",
+      alt: "Alternate view of Kampinda Secondary School ablution block",
+      caption: "Alternate view – Kampinda Secondary School ablution",
+      categories: ["wash-projects"],
+      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
+      client: "PEAS Zambia Ltd"
+    },
+
     // School Infrastructure – Kampinda boys dormitory (PEAS)
     {
       src: "Images/boys dorm.jpg",
@@ -425,56 +475,6 @@ if (projectsGrid) {
       caption: "Dormitory entrance – Kampinda Secondary School, Kasama",
       categories: ["school-infrastructure"],
       projectGroup: "Construction of boys dormitory at Kampinda secondary school, Kasama.",
-      client: "PEAS Zambia Ltd"
-    },
-
-    // WASH – Kampinda Secondary School ablutions (PEAS)
-    {
-      src: "Images/kamp ablution 2.jpg",
-      alt: "Ablution block at Kampinda Secondary School",
-      caption: "Ablution block – Kampinda Secondary School, Kasama",
-      categories: ["wash-projects"],
-      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
-      client: "PEAS Zambia Ltd"
-    },
-    {
-      src: "Images/kampinda ablution 1.jpg",
-      alt: "Kampinda Secondary School ablution facility",
-      caption: "Staff and learners’ ablution – Kampinda Secondary School, Kasama",
-      categories: ["wash-projects"],
-      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
-      client: "PEAS Zambia Ltd"
-    },
-    {
-      src: "Images/kamp ab 3.jpg",
-      alt: "Kampinda Secondary School ablution under construction",
-      caption: "Construction works – Kampinda Secondary School ablution",
-      categories: ["wash-projects"],
-      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
-      client: "PEAS Zambia Ltd"
-    },
-    {
-      src: "Images/kamp ab 4.jpg",
-      alt: "Side elevation of Kampinda Secondary School ablution",
-      caption: "Side elevation – Kampinda Secondary School ablution",
-      categories: ["wash-projects"],
-      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
-      client: "PEAS Zambia Ltd"
-    },
-    {
-      src: "Images/kamp ab 5.jpg",
-      alt: "Completed ablution block at Kampinda Secondary School",
-      caption: "Completed ablution block – Kampinda Secondary School, Kasama",
-      categories: ["wash-projects"],
-      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
-      client: "PEAS Zambia Ltd"
-    },
-    {
-      src: "Images/kamp ab again.jpg",
-      alt: "Alternate view of Kampinda Secondary School ablution block",
-      caption: "Alternate view – Kampinda Secondary School ablution",
-      categories: ["wash-projects"],
-      projectGroup: "Construction of staff & boys/girls ablution at Kampinda secondary school, Kasama.",
       client: "PEAS Zambia Ltd"
     },
 
@@ -564,7 +564,7 @@ if (projectsGrid) {
 
     // WASH – Water kiosks & water reticulation in Makululu (Habitat for Humanity)
     {
-      src: "Images/Tank stand.jpg",
+      src: "Images/tank2.jpg",
       alt: "Elevated tank stand for water kiosks in Makululu",
       caption: "Elevated tank stand – Makululu water kiosks project, Kabwe",
       categories: ["wash-projects"],
@@ -572,7 +572,7 @@ if (projectsGrid) {
       client: "Habitat for Humanity Zambia"
     },
     {
-      src: "Images/Tank stand room.jpg",
+      src: "Images/tank1.jpg",
       alt: "Tank stand control room in Makululu",
       caption: "Tank stand control room – Makululu water kiosks project",
       categories: ["wash-projects"],
@@ -580,7 +580,7 @@ if (projectsGrid) {
       client: "Habitat for Humanity Zambia"
     },
     {
-      src: "Images/Regular tank stand.jpg",
+      src: "Images/tank3.jpg",
       alt: "Water tank stand structure in Makululu",
       caption: "Water tank stand – Makululu water reticulation",
       categories: ["wash-projects"],
@@ -588,7 +588,7 @@ if (projectsGrid) {
       client: "Habitat for Humanity Zambia"
     },
     {
-      src: "Images/Regular tank stand with tanks.png",
+      src: "Images/tank4.jpg",
       alt: "Tank stand with mounted water tanks in Makululu",
       caption: "Tank stand with tanks – Makululu water kiosks project",
       categories: ["wash-projects"],
@@ -596,7 +596,7 @@ if (projectsGrid) {
       client: "Habitat for Humanity Zambia"
     },
     {
-      src: "Images/Pipe work septic thing.jpg",
+      src: "Images/tank5.jpg",
       alt: "Water and sewer reticulation pipework in Makululu",
       caption: "Water reticulation pipework – Makululu compound, Kabwe",
       categories: ["wash-projects"],
@@ -604,7 +604,7 @@ if (projectsGrid) {
       client: "Habitat for Humanity Zambia"
     },
     {
-      src: "Images/Pipework digging.jpg",
+      src: "Images/tank6.jpg",
       alt: "Excavation for water reticulation pipelines in Makululu",
       caption: "Excavation works – Makululu water reticulation project",
       categories: ["wash-projects"],
@@ -742,7 +742,7 @@ if (projectsGrid) {
       caption: "Biogas digester – Njase Clinic, Choma",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio clin 1.jpg",
@@ -750,7 +750,7 @@ if (projectsGrid) {
       caption: "Excavation – 60m^3 biogas digester, Njase Clinic",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio clin 2.jpg",
@@ -758,7 +758,7 @@ if (projectsGrid) {
       caption: "Digester chamber – Njase Clinic, Choma",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio clin 3.jpg",
@@ -766,7 +766,7 @@ if (projectsGrid) {
       caption: "Superstructure works – Njase Clinic biogas digester",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio clin 4.jpg",
@@ -774,7 +774,7 @@ if (projectsGrid) {
       caption: "Inspection and access chamber – Njase Clinic biogas system",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio clin 5.jpg",
@@ -782,7 +782,7 @@ if (projectsGrid) {
       caption: "Completed 60m^3 biogas digester – Njase Clinic, Choma",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio clin 6.jpg",
@@ -790,7 +790,7 @@ if (projectsGrid) {
       caption: "System details – Njase Clinic biogas digester",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 60m^3 bio gas digester at Njase clinic, Choma",
-      client: "Njase Clinic"
+      client: "BORDA Zambia LTD"
     },
 
     // Bio Gas Digestor – Chainda Community School, Lusaka
@@ -800,7 +800,7 @@ if (projectsGrid) {
       caption: "Biogas digester – Chainda Community School, Lusaka",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio chainda 1.jpg",
@@ -808,7 +808,7 @@ if (projectsGrid) {
       caption: "Construction works – Chainda Community School biogas digester",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio chainda 2.jpg",
@@ -816,7 +816,7 @@ if (projectsGrid) {
       caption: "Digester chamber – Chainda Community School, Lusaka",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio chainda 3.jpg",
@@ -824,7 +824,7 @@ if (projectsGrid) {
       caption: "Ongoing works – Chainda Community School biogas project",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio chainda 4.jpg",
@@ -832,7 +832,7 @@ if (projectsGrid) {
       caption: "Finishing works – Chainda Community School biogas project",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio chan 7.jpg",
@@ -840,7 +840,7 @@ if (projectsGrid) {
       caption: "Biogas digester and ABR – Chainda Community School, Lusaka",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
     {
       src: "Images/bio ch 5.jpg",
@@ -848,7 +848,7 @@ if (projectsGrid) {
       caption: "System components – Chainda Community School biogas project",
       categories: ["bio-gas-digestor"],
       projectGroup: "Construction of 80m^3 biogas dugester and ABR at Chainda Community School, Lusaka.",
-      client: "Chainda Community School"
+      client: "BORDA Zambia LTD"
     },
   ];
 
